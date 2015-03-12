@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class MovingFloor : MonoBehaviour {
-
 	public Vector3 speed    = Vector3.zero; //1フレームで動く距離(マイナスは逆方向)
 	public Vector3 distance = Vector3.zero; //この距離まで動く
 	
@@ -11,10 +10,9 @@ public class MovingFloor : MonoBehaviour {
 	public bool turn = true;
 	
 	private Vector3 moved = Vector3.zero; //移動した距離を保持
-	private List ride = new List();//床に乗ってるオブジェクト
+	private List ride = new List(); //床に乗ってるオブジェクト
 	
-	void Update() 
-	{
+	void Update() {
 		//床を動かす
 		float x = speed.x;
 		float y = speed.y;
@@ -30,12 +28,10 @@ public class MovingFloor : MonoBehaviour {
 		moved.x += Mathf.Abs(speed.x);
 		moved.y += Mathf.Abs(speed.y);
 		moved.z += Mathf.Abs(speed.z);
-		
 		//床の上のオブジェクトを床と連動して動かす
-		foreach (GameObject g in ride) 
-		{
-			Vector2 v = g.transform.position;
-			g.transform.position = new Vector3(v.x + x, v.y + y);	//yの移動は不要////////////
+		foreach (GameObject g in ride) {
+			Vector3 v = g.transform.position;
+			g.transform.position = new Vector3(v.x + x, v.y, v.z + z);	//yの移動は不要
 		}
 		//折り返すか？
 		if (moved.x >= distance.x && moved.y >= distance.y && moved.z >= distance.z && turn) {
@@ -44,13 +40,12 @@ public class MovingFloor : MonoBehaviour {
 		}
 	}
 	
-	void OnTriggerEnter2D(Collider2D other) {
+	void OnTriggerEnter(Collider other) {
 		//床の上に乗ったオブジェクトを保存
 		ride.Add(other.gameObject);
-		//Debug.LogError ("ride");
 	}
 	
-	void OnTriggerExit2D(Collider2D other) {
+	void OnTriggerExit(Collider other) {
 		//床から離れたので削除
 		ride.Remove(other.gameObject);
 	}
