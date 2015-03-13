@@ -1,45 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MovingFloor.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CameraRotation.cs">
     <Files>
-      <File FileName="Assets/Scripts/MovingFloor.cs" Line="7" Column="16" />
+      <File FileName="Assets/Scripts/MovingFloor.cs" Line="13" Column="26" />
+      <File FileName="Assets/Scripts/CameraRotation.cs" Line="20" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Locomotion Setup" expanded="True">
-              <Node name="Scripts" expanded="True" />
-            </Node>
             <Node name="Scripts" expanded="True">
-              <Node name="MovingFloor.cs" selected="True" />
-            </Node>
-            <Node name="UnityChan" expanded="True">
-              <Node name="Scripts" expanded="True" />
-            </Node>
-          </Node>
-          <Node name="Assembly-CSharp-firstpass" expanded="True">
-            <Node name="Standard Assets" expanded="True">
-              <Node name="Character Controllers" expanded="True">
-                <Node name="Sources" expanded="True">
-                  <Node name="Scripts" expanded="True" />
-                </Node>
-              </Node>
-            </Node>
-            <Node name="UnityChan" expanded="True" />
-          </Node>
-          <Node name="Assembly-UnityScript" expanded="True">
-            <Node name="Locomotion Setup" expanded="True">
-              <Node name="Scripts" expanded="True" />
-            </Node>
-          </Node>
-          <Node name="Assembly-UnityScript-firstpass" expanded="True">
-            <Node name="Standard Assets" expanded="True">
-              <Node name="Character Controllers" expanded="True">
-                <Node name="Sources" expanded="True">
-                  <Node name="Scripts" expanded="True" />
-                </Node>
-              </Node>
+              <Node name="CameraRotation.cs" selected="True" />
             </Node>
           </Node>
         </State>

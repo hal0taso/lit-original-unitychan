@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class MovingFloor : MonoBehaviour {
 	public Vector3 speed    = Vector3.zero; //1フレームで動く距離(マイナスは逆方向)
@@ -10,7 +10,7 @@ public class MovingFloor : MonoBehaviour {
 	public bool turn = true;
 	
 	private Vector3 moved = Vector3.zero; //移動した距離を保持
-	private List ride = new List(); //床に乗ってるオブジェクト
+	private List<GameObject> ride = new List<GameObject>(); //床に乗ってるオブジェクト
 	
 	void Update() {
 		//床を動かす
