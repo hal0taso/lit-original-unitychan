@@ -17,13 +17,13 @@ public class CameraRotation : MonoBehaviour {
 		
 		if (Input.GetKeyDown("a")) {
 			Camera_Controller += 90;
-			Camera_Controller %= 360;
+			Camera_Controller %= 180;
 			Debug.Log(Camera_Controller);
 			iTween.RotateTo(cube, iTween.Hash("y", Camera_Controller, "time", 0.5f));
 		}
 		if (Input.GetKeyDown("d")) {
 			Camera_Controller -= 90;
-			Camera_Controller %= 360;
+			Camera_Controller %= 180;
 			Debug.Log(Camera_Controller);
 			iTween.RotateTo(cube, iTween.Hash("y", Camera_Controller, "time", 0.5f));
 		}

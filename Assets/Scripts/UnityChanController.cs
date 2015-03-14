@@ -14,8 +14,10 @@ public class UnityChanController : MonoBehaviour {
 	private int doWalkJump;
 	public float forwardSpeed = 2.0f;
 	public float backwardSpeed = 2.0f;
-	public float jumpPower = 3.0f; 
+	public float jumpPower = 2.0f; 
 	private Vector3 velocity;
+
+	public GameObject Cube;
 
 	public bool useCurves = true;				// Mecanimでカーブ調整を使うか設定する
 	// このスイッチが入っていないとカーブは使われない
@@ -27,6 +29,7 @@ public class UnityChanController : MonoBehaviour {
 	private float orgColHight;
 	private Vector3 orgVectColCenter;
 	static int jumpState = Animator.StringToHash("Base Layer.Jump");
+	private int JumpCounter = 0;
 	
 	// Use this for initialization
 	void Start () {
@@ -44,7 +47,15 @@ public class UnityChanController : MonoBehaviour {
 		orgColHight = col.height;
 		orgVectColCenter = col.center;
 	}
-	
+
+	void OnCollidionExit(Collider Cube){
+		JumpCounter += 1;
+	}
+
+	void OnCollidionEnter(Collider Cube){
+		JumpCounter = 0;
+	}
+
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKey (KeyCode.RightArrow)) {
@@ -60,10 +71,17 @@ public class UnityChanController : MonoBehaviour {
 
 		if (Input.GetKey(KeyCode.Space)) {
 			animator.SetBool(doWalkJump, true);
-			rb.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
+			//rb.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
+			if (JumpCounter == 0) {
+				rb.AddForce (Vector3.up * jumpPower, ForceMode.VelocityChange);
+				//iTween.MoveTo(gameObject, iTween.Hash("y", 3, "time", 1.0f, "easetype", iTween.EaseType.easeOutCubic));
+				
+			}
 		}else{
 			animator.SetBool(doWalkJump, false);
 		}
+
+
 	}
 
 	void FixedUpdate () {
@@ -95,9 +113,9 @@ public class UnityChanController : MonoBehaviour {
 					// JumpHeight:JUMP00でのジャンプの高さ（0〜1）
 					// GravityControl:1⇒ジャンプ中（重力無効）、0⇒重力有効
 					float jumpHeight = animator.GetFloat("JumpHeight");
-					float gravityControl = animator.GetFloat("GravityControl"); 
-					if(gravityControl > 0)
-						rb.useGravity = false;	//ジャンプ中の重力の影響を切る
+					//float gravityControl = animator.GetFloat("GravityControl"); 
+					//if(gravityControl > 0)
+						//rb.useGravity = false;	//ジャンプ中の重力の影響を切る
 					
 					// レイキャストをキャラクターのセンターから落とす
 					Ray ray = new Ray(transform.position + Vector3.up, -Vector3.up);

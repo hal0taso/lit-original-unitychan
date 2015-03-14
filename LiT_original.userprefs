@@ -1,17 +1,29 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FallingFloor.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UnityChanController.cs">
     <Files>
       <File FileName="Assets/Scripts/MovingFloor.cs" Line="13" Column="26" />
-      <File FileName="Assets/Scripts/CameraRotation.cs" Line="20" Column="29" />
-      <File FileName="Assets/Scripts/FallingFloor.cs" Line="20" Column="45" />
+      <File FileName="Assets/Scripts/CameraRotation.cs" Line="26" Column="28" />
+      <File FileName="Assets/Scripts/FallingFloor.cs" Line="19" Column="39" />
+      <File FileName="Assets/Scripts/UnityChanController.cs" Line="76" Column="5" />
+      <File FileName="Assets/UnityChan/Scripts/UnityChanControlScriptWithRgidBody.cs" Line="137" Column="6" />
+      <File FileName="Assets/Locomotion Setup/Locomotion/Scripts/Locomotion.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Goal.cs" Line="19" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
+            <Node name="Locomotion Setup" expanded="True">
+              <Node name="Locomotion" expanded="True">
+                <Node name="Scripts" expanded="True" />
+              </Node>
+            </Node>
             <Node name="Scripts" expanded="True">
-              <Node name="FallingFloor.cs" selected="True" />
+              <Node name="UnityChanController.cs" selected="True" />
+            </Node>
+            <Node name="UnityChan" expanded="True">
+              <Node name="Scripts" expanded="True" />
             </Node>
           </Node>
         </State>
