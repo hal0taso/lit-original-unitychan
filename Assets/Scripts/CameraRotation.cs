@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraRotation : MonoBehaviour {
 	
 	public GameObject cube;
-	int Camera_Controller = 0;
+	int Camera_Controller = 90;
 	
 	// Use this for initialization
 	void Start () {
